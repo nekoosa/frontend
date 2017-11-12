@@ -1,0 +1,43 @@
+@import "./default/index.scss";
+html {
+  font-family: $fontFamily;
+  color: $fontColor;
+}
+
+.header-container {
+  display: block;
+  height: $headerHeight;
+  padding: $paddingBlock;
+  border-bottom: 1px solid $borderColor;
+}
+.logo {
+  float: left;
+  width: $headerWidth;
+  height: $headerHeight;
+  line-height: $headerHeight;
+  background: $backgroundImg;
+  background-size: $headerWidth $headerHeight;
+}
+ul.menu {
+  float: right;
+}
+.menu-item {
+  position: relative;
+  margin-left: 10px;
+  cursor: pointer;
+  line-height: $headerHeight;
+  font-size: $fontNormalSize;
+}
+.menu-item.active:after {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 14px;
+  height: 4px;
+  bottom: 15px;
+  left: calc(50% - 7px);
+  background: $themecolor;
+}
+.home {
+  color: $themecolor;
+}
