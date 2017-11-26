@@ -5,6 +5,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const extractCss = new ExtractTextPlugin('stylesheet/[name]-global.css')
 const extractSass = new ExtractTextPlugin('stylesheet/[name]-theme.css')
+
+// markdown 渲染器
+const marked = require('marked')
+const renderer = new marked.Renderer()
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -37,6 +42,21 @@ module.exports = {
             scss: 'vue-style-loader!css-loader'
           }
         }
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader'
+          },
+          {
+            loader: "markdown-loader",
+            options: {
+              pedantic: true,
+              renderer
+            }
+          }
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
