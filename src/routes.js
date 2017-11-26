@@ -1,9 +1,9 @@
 import Vue from 'vue'
 
-import Home from './components/public/home.vue'
+import Articles from './components/public/markdown.vue'
 let routes = [
-  { path: '/', component: Home, name: 'home' },
-  { path: '/home', component: Home, name: 'home' }
+  { path: '/', component: Articles, name: 'home' },
+  { path: '/resources', component: Articles, name: 'home' }
 ]
 
 export default routes
