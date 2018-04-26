@@ -1,0 +1,3 @@
+[submodule "src/testSub"]
+	path = src/testSub
+	url = git@github.com:nekoosa/testSubRepository.git
